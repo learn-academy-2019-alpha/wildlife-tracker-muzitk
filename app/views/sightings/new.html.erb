@@ -1,0 +1,24 @@
+<h1> report a sighting </h1>
+
+    <%= form_for do |form| %>
+    <% form.hidden_field :animal_id %>
+    
+    <%form.label :date%>
+    <%form.text_field :date%> 
+    <br />
+    <%form.label :time%>
+    <%form.text_field :time%>
+    <br />
+    <%form.label :longitude%>
+    <%form.text_field :longitude%> 
+    <br />
+    <%form.label :latgitude%>
+    <%form.text_field :langitude%>
+    <br />
+    <%form.label :Region%>
+    <%form.text_field :Region%>
+    
+    <br />
+    <%form.submit "REPORT" %>
+    
+  <% end %>

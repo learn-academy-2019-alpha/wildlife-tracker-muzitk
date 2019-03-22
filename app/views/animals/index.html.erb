@@ -1,0 +1,18 @@
+<h1>Animal</h1>
+
+<%= link_to "add to the list", new_animal_path %>
+
+
+<ul>
+<% @animal_list.each do |animal| %>
+    <li>
+    <%= animal.name%> 
+    
+    <%= link_to "Update", edit_animal_path(animal)%>
+    <%= link_to "Delete", animal_path(animal), method: :DELETE%>
+    <%= link_to "Read More!", animal_path(animal) %>
+    </li>
+    
+<%end%>
+
+</ul>

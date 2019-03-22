@@ -1,0 +1,14 @@
+<h5>Animals their Latin Names & kingdom</h5>
+Name: <%= @animal.name %>
+<br />
+Latin Name: <%= @animal.latin_name %>
+<br />
+Kingdom: <%= @animal.kingdom %>
+<br />
+<br />
+
+
+<%= link_to "add a sigthing", new_sighting_path({animal_id: @animal.id}) %>
+
+
+    
