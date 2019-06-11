@@ -6,6 +6,7 @@ class CreateSightings < ActiveRecord::Migration[5.2]
       t.string :langitude
       t.string :longitude
       t.string :region
+      t.integer :animal_id
 
       t.timestamps
     end

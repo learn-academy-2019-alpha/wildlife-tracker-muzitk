@@ -1,8 +1,16 @@
-<h1> Report a Sighting </h1>
+
+<h4>Edit Sighting</h4>
+
+<% if @sighting.errors %>
+    <% @sighting.errors. full_messages.each do |message| %>
+        <li> <%= message %></li>
+    <% end %>
+ <% end %>
+
+            
 
     <%= form_for @sighting do |form| %>
-    <%= form.hidden_field :animal_id %>
-    
+
     <%= form.label :date%>
     <%= form.text_field :date%> 
     <br />
@@ -20,6 +28,6 @@
     
     <br />
     
-    <%= form.submit "REPORT" %>
+    <%= form.submit "Edit Sighting" %>
     
   <% end %>

@@ -1,3 +1,5 @@
+<%= link_to "Add A New Sighting", new_sighting_path({animal_id: @animal.id}) %>
+
 <h5>Animals their Latin Names & kingdom</h5>
 Name: <%= @animal.name %>
 <br />
@@ -5,10 +7,30 @@ Latin Name: <%= @animal.latin_name %>
 <br />
 Kingdom: <%= @animal.kingdom %>
 <br />
+
+
+<% @animal.sightings.each do |sighting| %>
+Date: <%= sighting.date %>
+<br />
+Time: <%= sighting.time %>
+<br />
+Langitude: <%= sighting.langitude %>
+<br />
+Longitude: <%= sighting.longitude %>
+<br />
+Region: <%= sighting.region %>
 <br />
 
 
-<%= link_to "add a sigthing", new_sighting_path({animal_id: @animal.id}) %>
+<%= link_to "Edit Sighting", edit_sighting_path(sighting) %>
+<%= link_to "Delete Sighting", sighting_path(sighting), method: :DELETE, data: {confirm:'Are you sure?'} %>
+                                
+<% end %>
+
+
+
+
+
 
 
     

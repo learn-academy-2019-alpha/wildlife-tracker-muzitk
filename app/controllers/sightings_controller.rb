@@ -22,23 +22,35 @@ class SightingsController < ApplicationController
         end
     end
 
- private
-
-   def sight_params
-       params.require(:sighting).permit(:date, :time, :langitude, :longitude, :region, :animal_id)
-   end
-
-    
     
     def edit
+      @sighting = Sighting.find(params[:id])
+
     end 
     
     def update
+         @sighting = Sighting.find(params[:id])
+         if(@sighting.update(sight_params))
+             redirect_to animal_path(@sighting.animal)
+         else
+             @errors = @sighting.errors.full_messages 
+             render action: :new
+         end
     end
 
     
     def destroy
+        @sighting = Sighting.find(params[:id])
+        @sighting.destroy
+        
+        redirect_to animal_path(@sighting.animal)
     end
+    
+     private
+
+   def sight_params
+       params.require(:sighting).permit(:date, :time, :langitude, :longitude, :region, :animal_id)
+   end
     
 end
  

@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_172700) do
     t.string "langitude"
     t.string "longitude"
     t.string "region"
+    t.integer "animal_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
